@@ -1,0 +1,141 @@
+/* common */
+* {
+  font-size: 20px;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+a {
+  padding: 10px;
+}
+button {
+  padding: 10px 20px;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightgray;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+.header-div-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-div-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu-button {
+  background-color: transparent;
+  border: transparent;
+}
+
+.header-menu-button img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-radius: 50%;
+  background-color: gray;
+  top: 1px;
+}
+
+.header-account-button {
+  background-color: transparent;
+  border: transparent;
+}
+
+.header-account-button img {
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  border-radius: 50%;
+  position: relative;
+  top: 2px;
+}
+
+/* section-top */
+.section-top {
+  height: 50%;
+}
+
+.section-top div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+/* section-search */
+.section-search-input {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.section-search-input div {
+  margin: 0px 10px;
+}
+.section-search-input input {
+  width: 30%;
+}
+.section-search-input img {
+  width: 30px;
+  height: 30px;
+}
+.section-search-buttons {
+  display: flex;
+  justify-content: center;
+}
+.section-search-buttons button {
+  margin: 10px;
+  border-radius: 10px;
+  border: transparent;
+  outline: 0;
+}
+/* section-bottom */
+.section-bottom {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.section-bottom div {
+  padding-left: 20px;
+  background-color: lightgray;
+}
+.div-country {
+  padding: 20px 40px;
+  background-color: lightgray;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 20px 0;
+  background-color: lightgray;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
