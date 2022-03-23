@@ -38,21 +38,12 @@ startBtn.addEventListener('click', () => {
 });
 
 checkBtn.addEventListener('click', () => {
-    inputValue = inputTag.value;
-    if (inputTag.value === '' || inputValue < 0 || inputValue > 1000) {
-        alert(`입력값이 세자리숫자가 아닙니다. (입력값 : ${inputTag.value})`);
-        inputTag.value = '';
-        return;
-    }
+    if (!inputIsValid()) return;
 
-    count--;
+    decreaseCount();
 
-    remainCount.textContent = `${count}회 남았습니다.`;
-    inputArray = [];
-    for (let i = 0; i < 3; i++) {
-        inputArray.unshift(inputValue % 10);
-        inputValue = Math.floor(inputValue / 10);
-    }
+    setInputArray();
+
     checkResult(answer, inputArray);
 
     if (count <= 0 && strike != 3) {
@@ -65,21 +56,12 @@ checkBtn.addEventListener('click', () => {
 
 inputBox.addEventListener('keyup', (event) => {
     if (event.key !== 'Enter') return;
-    inputValue = inputTag.value;
-    if (inputTag.value === '' || inputValue < 0 || inputValue > 1000) {
-        alert(`입력값이 세자리숫자가 아닙니다. (입력값 : ${inputTag.value})`);
-        inputTag.value = '';
-        return;
-    }
+    if (!inputIsValid()) return;
 
-    count--;
+    decreaseCount();
 
-    remainCount.textContent = `${count}회 남았습니다.`;
-    inputArray = [];
-    for (let i = 0; i < 3; i++) {
-        inputArray.unshift(inputValue % 10);
-        inputValue = Math.floor(inputValue / 10);
-    }
+    setInputArray();
+
     checkResult(answer, inputArray);
 
     if (count <= 0 && strike != 3) {
@@ -95,6 +77,29 @@ function clear() {
     strikeBall.textContent = '0 Strike 0 Ball';
     remainCount.textContent = '10회 남았습니다.';
     inputValue = 0;
+}
+
+function decreaseCount() {
+    count--;
+    remainCount.textContent = `${count}회 남았습니다.`;
+}
+
+function setInputArray() {
+    inputArray = [];
+    for (let i = 0; i < 3; i++) {
+        inputArray.unshift(inputValue % 10);
+        inputValue = Math.floor(inputValue / 10);
+    }
+}
+
+function inputIsValid() {
+    inputValue = inputTag.value;
+    if (inputTag.value === '' || inputValue < 0 || inputValue > 1000) {
+        alert(`입력값이 세자리숫자가 아닙니다. (입력값 : ${inputTag.value})`);
+        inputTag.value = '';
+        return false;
+    }
+    return true;
 }
 
 function checkResult(answer, inputArray) {
