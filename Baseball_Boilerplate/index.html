@@ -1,3 +1,9 @@
+<!-- ToDO
+1. 게임시작 버튼만들기
+2. 
+3. 
+ -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,9 +29,31 @@
       </div>
       <h1>Baseball</h1>
 
-      <!-- 야구게임 Start -->
+      <!-- 야구게임 Start 
+        [v] 게임시작버튼 만들기
+        [v] 숫자입력칸 만들기
+        [v] 스트라이크,볼개수 표기하기
+      -->
+      <button id="start-btn">Game Start</button>
+      <div class="result-box">
+        <span id="strike-ball">0 Strike 0 Ball</span>
+        <span id="remain-count"> 10회 남았습니다.</span>
+      </div>
+      <div class="input-box">
+        <!-- input태그의 onKeyup속성에 replace함수와, 정규식을 활용하여  0~9가 아닌 문자는 지워지게 함-->
+        <input
+          type="number"
+          min="100"
+          max="999"
+          onKeyup="this.value=this.value.replace(/[^0-9]/g, '');"
+        />
 
-      <!-- 야구게임 End -->
+        <button id="check-btn">체크</button>
+      </div>
+
+      <!-- 야구게임 End 
+        [v] 재시작버튼 만들기
+      -->
     </section>
 
     <script src="index.js"></script>
