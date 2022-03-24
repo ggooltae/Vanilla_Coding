@@ -51,8 +51,9 @@ button {
 }
 .calendar table {
   border-collapse: collapse;
+  font-size: 20px;
 }
 
 th {
-  width: 40px;
+  width: 60px;
 }
